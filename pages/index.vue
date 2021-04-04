@@ -1,75 +1,11 @@
 <template>
 	<v-row justify="center" align="center">
-		<v-col cols="12" sm="8" md="6">
-			<v-card>
-				<v-card-title class="headline">
-					Welcome to the Vuetify + Nuxt.js template
-					<NuxtLink to="/inspire">inspire</NuxtLink>
-				</v-card-title>
-				<v-card-text>
-					<p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to
-						empower developers to create amazing applications.</p>
-					<p>
-						For more information on Vuetify, check out the <a
-						href="https://vuetifyjs.com"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						documentation
-					</a>.
-					</p>
-					<p>
-						If you have questions, please join the official <a
-						href="https://chat.vuetifyjs.com/"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="chat"
-					>
-						discord
-					</a>.
-					</p>
-					<p>
-						Find a bug? Report it on the github <a
-						href="https://github.com/vuetifyjs/vuetify/issues"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="contribute"
-					>
-						issue board
-					</a>.
-					</p>
-					<p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in
-						the future.</p>
-					<div class="text-xs-right">
-						<em><small>&mdash; John Leider</small></em>
-					</div>
-					<hr class="my-3">
-					<a
-						href="https://nuxtjs.org/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Nuxt Documentation
-					</a>
-					<br>
-					<a
-						href="https://github.com/nuxt/nuxt.js"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Nuxt GitHub
-					</a>
-				</v-card-text>
-				<v-card-actions>
-					<v-spacer/>
-					<v-btn
-						color="primary"
-						nuxt
-						to="/inspire"
-					>
-						Continue
-					</v-btn>
-				</v-card-actions>
+		<v-col cols="12" sm="8" md="6" v-for="course in courses" :key="course.slug">
+			<v-card nuxt :to="'/course/'+course.slug">
+				<v-img v-if="course.image" height="250" :src="course.image"></v-img>
+
+				<v-card-title class="headline">{{ course.title }}</v-card-title>
+				<v-card-text>{{ course.description }}</v-card-text>
 			</v-card>
 		</v-col>
 	</v-row>
@@ -77,6 +13,30 @@
 
 <script>
 	export default {
+		async asyncData ({ $content }) {
+			const coursesPages = await $content("courses", { deep: true }).where({ extension: '.json' }).fetch()
+			let slugs = []
+			const courses = coursesPages
+				.filter(x=>x.dir!=="/courses")
+				.map(x=>{ return {
+					slug: x.dir.replace('/courses/',''),
+					title:x.title,
+					image:x.image,
+					description:x.description,
+				}})
+				.filter(x=>{
+					if(slugs.includes(x.slug)) return false
+					else {
+						slugs.push(x.slug)
+						return true
+					}
+				})
+
+			return {
+				courses
+			}
+		},
+
 		components: {
 		}
 	}
