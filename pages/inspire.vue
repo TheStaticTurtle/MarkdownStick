@@ -21,7 +21,7 @@
 
 <script>
 	export default {
-		template: "course",
+		layout: "course",
 		components: {}
 	}
 </script>

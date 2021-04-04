@@ -1,7 +1,7 @@
 <template>
 	<v-app dark>
 		<v-app-bar fixed app>
-			<v-toolbar-title v-text="title"/>
+			<v-toolbar-title>Documents</v-toolbar-title>
 		</v-app-bar>
 		<v-main>
 			<v-container>
@@ -15,24 +15,6 @@
 	export default {
 		data() {
 			return {
-				clipped: false,
-				drawer: false,
-				fixed: true,
-				items: [
-					{
-						icon: 'mdi-apps',
-						title: 'Welcome',
-						to: '/'
-					},
-					{
-						icon: 'mdi-chart-bubble',
-						title: 'Inspire',
-						to: '/inspire'
-					}
-				],
-				miniVariant: false,
-				right: true,
-				rightDrawer: false,
 				title: 'Vuetify.js'
 			}
 		}
