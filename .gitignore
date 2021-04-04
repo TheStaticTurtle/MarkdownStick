@@ -88,3 +88,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+#Content courses
+/content/courses/*/
+!content/courses/example-course
