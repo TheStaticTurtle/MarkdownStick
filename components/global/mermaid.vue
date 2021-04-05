@@ -15,6 +15,8 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex'
+
 	export default {
 		name: "mermaid",
 		data() {
@@ -24,30 +26,51 @@
 				errored: null
 			}
 		},
-		mounted() {
-			import("mermaid/dist/mermaid").then(m => {
-				m.initialize({
-					startOnLoad: false,
-					theme: 'base',
-					themeVariables: {
-						fontFamily: "'Roboto', sans-serif !important",
-						fontSize: "16px",
-						...this.$vuetify.theme.currentTheme.mermaid
+		computed: {
+			theme(){
+				return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+			},
+		},
+
+		watch: {
+			"theme" : {
+				handler() {
+					this.draw()
+				}
+			}
+		},
+
+		methods: {
+			draw() {
+				this.errored = null
+				this.loaded = false
+				import("mermaid/dist/mermaid").then(m => {
+					m.initialize({
+						startOnLoad: false,
+						theme: 'base',
+						themeVariables: {
+							fontFamily: "'Roboto', sans-serif !important",
+							fontSize: "16px",
+							...this.$vuetify.theme.currentTheme.mermaid
+						}
+					});
+
+					try {
+						m.render('graph'+this.rnd, this.$refs.slot.textContent, (svgCode)=>{
+							this.loaded = true
+							this.$refs.content.innerHTML = svgCode;
+						});
+					} catch (e) {
+						const d = document.getElementById("dgraph"+this.rnd);
+						if(d) d.remove()
+
+						this.errored = e
 					}
 				});
-
-				try {
-					m.render('graph'+this.rnd, this.$refs.slot.textContent, (svgCode)=>{
-						this.loaded = true
-						this.$refs.content.innerHTML = svgCode;
-					});
-				} catch (e) {
-					const d = document.getElementById("dgraph"+this.rnd);
-					if(d) d.remove()
-
-					this.errored = e
-				}
-			});
+			}
+		},
+		mounted() {
+			this.draw()
 		}
 	}
 </script>
