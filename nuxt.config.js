@@ -82,11 +82,7 @@ export default {
 			dark: true,
 			themes: {
 				light: {
-					hover: colors.grey.darken4,
-					border: colors.grey.base,
-				},
-				dark: {
-					background: '#1B1B1B',
+					background: '#ffffff',
 
 					primary: colors.red.accent2,
 					accent: colors.orange.darken3,
@@ -97,28 +93,54 @@ export default {
 					error: colors.deepOrange.accent4,
 					success: colors.green.accent3,
 
-					hover: colors.grey.darken3,
-					border: colors.grey.darken2,
+					hover: colors.grey.lighten4,
+					border: colors.grey.base,
+					componentBackground: colors.shades.white,
+					componentHeadBackground: colors.grey.lighten3,
 
 					mermaid: {
-						background: "#f4f4f4",
-
+						background: "#474747",
 						primaryColor: colors.pink.base,
-						secondaryColor: colors.blue.base,
-						tertiaryColor: colors.green.base,
-
-						/*primaryBorderColor: "#ffffff",
-						secondaryBorderColor: "#ffffff",
-						tertiaryBorderColor: "#ffffff",*/
-
+						secondaryColor: colors.purple.base,
+						tertiaryColor: colors.deepPurple.base,
 						primaryTextColor: "#fff",
 						secondaryTextColor: "#fff",
 						tertiaryTextColor: "#fff",
+						noteBkgColor: "#ececec",
+						noteTextColor: "#101010",
+						noteBorderColor: "#ffffff00",
+						lineColor: "#0f0",
+						textColor: "#000000",
+						mainBkg: colors.pink.base,
+					},
+				},
+				dark: {
+					background: '#1B1B1B',
 
+					primary: colors.red.accent2,
+					accent: colors.orange.darken3,
+					secondary: colors.purple.accent2,
+					info: colors.teal.lighten1,
+					warning: colors.amber.base,
+					error: colors.deepOrange.accent4,
+					success: colors.green.accent3,
+
+					hover: colors.grey.darken3,
+					border: colors.grey.darken2,
+					componentBackground: colors.grey.darken4,
+					componentHeadBackground: colors.grey.darken4,
+
+					mermaid: {
+						background: "#f4f4f4",
+						primaryColor: colors.pink.base,
+						secondaryColor: colors.blue.base,
+						tertiaryColor: colors.green.base,
+						primaryTextColor: "#fff",
+						secondaryTextColor: "#fff",
+						tertiaryTextColor: "#fff",
 						noteBkgColor: "#393939",
 						noteTextColor: "#f5f5f5",
 						noteBorderColor: "#ffffff00",
-
 						lineColor: "#0f0",
 						textColor: "#fff",
 						mainBkg: colors.pink.base,

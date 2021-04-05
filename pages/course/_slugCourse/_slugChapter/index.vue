@@ -105,7 +105,7 @@
 		font-family: Arial, Helvetica, sans-serif;
 		width: 100%;
 
-		background-color: var(--v-hover-darken2);
+		background-color: var(--v-componentBackground-base);
 
 		border: thin solid var(--v-border-base);
 		border-radius: 6px !important;
@@ -129,6 +129,7 @@
 	.nuxt-content thead th {
 		font-size: 1.15rem;
 		font-weight: 100;
+		background-color: var(--v-componentHeadBackground-base) !important;
 	}
 
 	.nuxt-content table tbody tr:hover {
