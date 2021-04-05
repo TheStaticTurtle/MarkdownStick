@@ -1,6 +1,6 @@
 ---
 title: Cicero
-subltitle: Obscure placeholders
+subtitle: Obscure placeholders
 icon: mdi-shelf
 order: 2
 ---

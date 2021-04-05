@@ -1,6 +1,6 @@
 ---
 title: Introduction
-subltitle: Basics of placeholders
+subtitle: Basics of placeholders
 icon: mdi-book
 order: 1
 ---
