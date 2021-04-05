@@ -1,5 +1,5 @@
 <template>
-	<v-app dark>
+	<v-app dark :style="{background: $vuetify.theme.themes[theme].background}">
 		<v-navigation-drawer v-model="drawer" app>
 			<v-list-item>
 				<v-list-item-content>
@@ -53,9 +53,12 @@
 	export default {
 		name: "CourseTemplate",
 
-		computed: mapState([
-			'course'
-		]),
+		computed: {
+			theme(){
+				return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+			},
+			...mapState([ 'course'])
+		},
 
 		data() {
 			return {

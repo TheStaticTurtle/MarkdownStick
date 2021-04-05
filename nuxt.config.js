@@ -78,20 +78,63 @@ export default {
 	vuetify: {
 		customVariables: ['~/assets/variables.scss'],
 		theme: {
-			dark: false,
+			options: { customProperties: true },
+			dark: true,
 			themes: {
+				light: {
+					hover: colors.grey.darken4,
+					border: colors.grey.base,
+				},
 				dark: {
-					primary: colors.blue.darken2,
-					accent: colors.grey.darken3,
-					secondary: colors.amber.darken3,
+					background: '#1B1B1B',
+
+					primary: colors.red.accent2,
+					accent: colors.orange.darken3,
+					secondary: colors.purple.accent2,
+
 					info: colors.teal.lighten1,
 					warning: colors.amber.base,
 					error: colors.deepOrange.accent4,
-					success: colors.green.accent3
-				}
+					success: colors.green.accent3,
+
+					hover: colors.grey.darken3,
+					border: colors.grey.darken2,
+
+					mermaid: {
+						background: "#f4f4f4",
+
+						primaryColor: colors.pink.base,
+						secondaryColor: colors.blue.base,
+						tertiaryColor: colors.green.base,
+
+						/*primaryBorderColor: "#ffffff",
+						secondaryBorderColor: "#ffffff",
+						tertiaryBorderColor: "#ffffff",*/
+
+						primaryTextColor: "#fff",
+						secondaryTextColor: "#fff",
+						tertiaryTextColor: "#fff",
+
+						noteBkgColor: "#393939",
+						noteTextColor: "#f5f5f5",
+						noteBorderColor: "#ffffff00",
+
+						lineColor: "#0f0",
+						textColor: "#fff",
+						mainBkg: colors.pink.base,
+					},
+				},
 			}
 		}
 	},
+
+	/*hooks: {
+		'content:file:beforeInsert': async (document) => {
+			if (document.extension === '.md' && document.body) {
+				console.log(document.body)
+			}
+		}
+	},*/
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {

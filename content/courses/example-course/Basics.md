@@ -7,19 +7,19 @@ order: 25
 
 ## Headings
 ```
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+# H1 Heading
+## H2 Heading
+### H3 Heading
+#### H4 Heading
+##### H5 Heading
+###### H6 Heading
 ```
-# h1 Heading 8-)
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+# H1 Heading
+## H2 Heading
+### H3 Heading
+#### H4 Heading
+##### H5 Heading
+###### H6 Heading
 
 
 ## Horizontal Rules
@@ -102,12 +102,14 @@ _This is italic text_
 
 ### Start numbering with offset:
 
+```
+57. foo
+1. bar
+```
 57. foo
 1. bar
 
 
-```
-```
 
 
 

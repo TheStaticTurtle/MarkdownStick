@@ -1,7 +1,9 @@
 <template>
 	<v-container fluid>
 		<div ref="slot" style="display: none"><slot></slot></div>
-		<v-progress-circular :size="50" color="primary" indeterminate v-if="!loaded && !errored" ></v-progress-circular>
+		<div class="d-flex flex-column py-3" style="align-items: center">
+			<v-progress-circular :size="50" color="primary" indeterminate v-if="!loaded && !errored" ></v-progress-circular>
+		</div>
 		<v-alert v-if="errored" color="#C51162" dark icon="mdi-alert-octagon" border="right">
 			<h2>Error while rendering diagram</h2>
 			<code>
@@ -25,7 +27,13 @@
 		mounted() {
 			import("mermaid/dist/mermaid").then(m => {
 				m.initialize({
-					startOnLoad: false
+					startOnLoad: false,
+					theme: 'base',
+					themeVariables: {
+						fontFamily: "'Roboto', sans-serif !important",
+						fontSize: "16px",
+						...this.$vuetify.theme.currentTheme.mermaid
+					}
 				});
 
 				try {
