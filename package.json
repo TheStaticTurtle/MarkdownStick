@@ -15,6 +15,7 @@
 		"@nuxtjs/axios": "^5.13.1",
 		"@nuxtjs/pwa": "^3.3.5",
 		"core-js": "^3.9.1",
+		"mermaid": "^8.9.2",
 		"nuxt": "^2.15.3",
 		"prism-themes": "^1.6.0",
 		"rehype-katex": "^4.0.0",

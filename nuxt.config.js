@@ -65,10 +65,10 @@ export default {
 				theme: 'prismjs/themes/prism-tomorrow.css'
 			},
 			remarkPlugins: [
-				'remark-math'
+				'remark-math',
 			],
 			rehypePlugins: [
-				'rehype-katex'
+				'rehype-katex',
 			]
 		}
 	},
