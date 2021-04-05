@@ -60,6 +60,7 @@ export default {
 
 	// Content module configuration: https://go.nuxtjs.dev/config-content
 	content: {
+		liveEdit: false,
 		markdown: {
 			prism: {
 				theme: 'prismjs/themes/prism-tomorrow.css'
@@ -93,5 +94,13 @@ export default {
 	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
-	build: {}
+	build: {
+		extend(config, { isDev, isClient }) {
+			config.module.rules.push({
+				test: /\.md$/i,
+				loader: 'ignore-loader'
+			})
+		}
+
+	}
 }

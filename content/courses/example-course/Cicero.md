@@ -1,7 +1,7 @@
 ---
 title: Cicero
 subtitle: Obscure placeholders
-icon: mdi-shelf
+icon: mdi-book-open-variant
 order: 20
 ---
 
