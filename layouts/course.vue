@@ -36,7 +36,7 @@
 
 		<v-app-bar app>
 			<v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
-			<v-toolbar-title>{{ course.config.title }}<span v-if="course.chapter">/ {{ course.chapter.title }}</span> </v-toolbar-title>
+			<v-toolbar-title>{{ course.config.title }}<span v-if="course.chapter"> / {{ course.chapter.title }}</span> </v-toolbar-title>
 		</v-app-bar>
 
 		<v-main>
