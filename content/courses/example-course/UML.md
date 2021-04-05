@@ -2,7 +2,7 @@
 title: Diagrams?
 subtitle: Advanced stuff
 icon: mdi-chart-timeline
-order: 4
+order: 50
 ---
 
 You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:

@@ -1,10 +1,31 @@
 <template>
 	<v-row>
-		<v-col class="text-center">
+		<v-col class="">
 			<nuxt-content  :document="chapter"></nuxt-content>
 		</v-col>
 	</v-row>
 </template>
+
+<style>
+	h1,h2,h3,h4,h5,h6 {
+		text-align: center;
+	}
+
+	blockquote {
+		background:#f9f9f9;
+		border: 1px solid #e2e2e2;
+		border-left:5px solid #ccc;
+		margin:1em 10px 0.5em 5px;
+		padding:.25em 10px .25em 10px;
+	}
+	blockquote p {
+		display:inline;
+	}
+
+	ol> li> p {
+		margin-bottom: 0 !important;
+	}
+</style>
 
 <script>
 	export default {

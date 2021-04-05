@@ -2,7 +2,7 @@
 title: Code highlights?
 subtitle: Advanced stuff
 icon: mdi-laptop
-order: 3
+order: 30
 ---
 
 # Highlights

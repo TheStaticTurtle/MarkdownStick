@@ -2,7 +2,7 @@
 title: Introduction
 subtitle: Basics of placeholders
 icon: mdi-book
-order: 1
+order: 10
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor tellus eget mauris egestas rutrum. Curabitur velit turpis, pulvinar id sapien non, posuere sollicitudin lorem. Sed ullamcorper et quam id aliquet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis varius bibendum pellentesque. Cras condimentum dictum urna id pellentesque. Ut faucibus dictum rutrum. Morbi ac massa non libero tempus tincidunt. Ut velit ex, dignissim a convallis a, molestie id ex.

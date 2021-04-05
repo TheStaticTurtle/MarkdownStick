@@ -2,7 +2,7 @@
 title: Math stuff?
 subtitle: Advanced stuff
 icon: mdi-chart-areaspline
-order: 4
+order: 40
 ---
 
 You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
