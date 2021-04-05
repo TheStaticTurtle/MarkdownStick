@@ -37,6 +37,12 @@
 		<v-app-bar app>
 			<v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
 			<v-toolbar-title>{{ course.config.title }}<span v-if="course.chapter"> / {{ course.chapter.title }}</span> </v-toolbar-title>
+			<v-spacer></v-spacer>
+
+			<v-btn icon @click="$store.commit('settings/toggleDarkMode')">
+				<v-icon>mdi-invert-colors</v-icon>
+			</v-btn>
+
 		</v-app-bar>
 
 		<v-main>
@@ -57,7 +63,16 @@
 			theme(){
 				return (this.$vuetify.theme.dark) ? 'dark' : 'light'
 			},
-			...mapState([ 'course'])
+			...mapState(['course', 'settings'])
+		},
+
+		watch: {
+			"settings.ui" : {
+				deep: true,
+				handler() {
+					this.$vuetify.theme.dark = this.settings.ui.darkmode
+				}
+			}
 		},
 
 		data() {
