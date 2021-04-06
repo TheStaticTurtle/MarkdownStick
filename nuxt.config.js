@@ -42,12 +42,10 @@ export default {
 
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
-		// https://go.nuxtjs.dev/axios
 		'@nuxtjs/axios',
-		// https://go.nuxtjs.dev/pwa
 		'@nuxtjs/pwa',
-		// https://go.nuxtjs.dev/content
-		'@nuxt/content'
+		'@nuxt/content',
+		'@nuxtjs/auth-next'
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -169,6 +167,26 @@ export default {
 				loader: 'ignore-loader'
 			})
 		}
+	},
 
+	auth: {
+		strategies: {
+			local: {
+				token: {
+					property: 'token',
+					// required: true,
+					// type: 'Bearer'
+				},
+				user: {
+					property: 'user',
+					// autoFetch: true
+				},
+				endpoints: {
+					login: { url: 'http://localhost:3001/api/auth/login', method: 'post' },
+					logout: { url: 'http://localhost:3001/api/auth/logout', method: 'post' },
+					user: { url: 'http://localhost:3001/api/user', method: 'get' }
+				}
+			}
+		}
 	}
 }

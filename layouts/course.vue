@@ -60,6 +60,7 @@
 				<v-icon>mdi-invert-colors</v-icon>
 			</v-btn>
 
+			<UserManagementDialog></UserManagementDialog>
 		</v-app-bar>
 
 		<v-main>
@@ -72,10 +73,11 @@
 
 <script>
 	import { mapState } from 'vuex'
+	import UserManagementDialog from "../components/UserManagementDialog";
 
 	export default {
 		name: "CourseTemplate",
-
+		components: {UserManagementDialog},
 		computed: {
 			theme(){
 				return (this.$vuetify.theme.dark) ? 'dark' : 'light'
