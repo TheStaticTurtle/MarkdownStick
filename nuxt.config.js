@@ -25,7 +25,9 @@ export default {
 	],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [],
+	plugins: [
+		{ src: '~/plugins/jszip', mode: 'client' }
+	],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -150,13 +152,14 @@ export default {
 		}
 	},
 
-	/*hooks: {
+	hooks: {
 		'content:file:beforeInsert': async (document) => {
-			if (document.extension === '.md' && document.body) {
-				console.log(document.body)
+			if (document.extension === '.md') {
+
+				document.raw = document.text
 			}
 		}
-	},*/
+	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {

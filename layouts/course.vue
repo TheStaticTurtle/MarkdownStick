@@ -39,6 +39,23 @@
 			<v-toolbar-title>{{ course.config.title }}<span v-if="course.chapter"> / {{ course.chapter.title }}</span> </v-toolbar-title>
 			<v-spacer></v-spacer>
 
+			<v-menu left bottom >
+				<template v-slot:activator="{ on, attrs }">
+					<v-btn icon v-bind="attrs" v-on="on" >
+						<v-icon>mdi-download</v-icon>
+					</v-btn>
+				</template>
+
+				<v-list>
+					<v-list-item @click="$store.dispatch('course/downloadCurrentChapter')">
+						<v-list-item-title><v-icon class="mr-2">mdi-language-markdown</v-icon>Download this chapter</v-list-item-title>
+					</v-list-item>
+					<v-list-item @click="$store.dispatch('course/downloadCurrentCourse')">
+						<v-list-item-title><v-icon class="mr-2">mdi-folder-zip</v-icon>Download the entire course</v-list-item-title>
+					</v-list-item>
+				</v-list>
+			</v-menu>
+
 			<v-btn icon @click="$store.commit('settings/toggleDarkMode')">
 				<v-icon>mdi-invert-colors</v-icon>
 			</v-btn>
