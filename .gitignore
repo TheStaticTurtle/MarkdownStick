@@ -92,3 +92,4 @@ sw.*
 #Content courses
 /content/courses/*/
 !content/courses/example-course
+/build/
