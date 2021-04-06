@@ -13,7 +13,10 @@
 
 <script>
 	export default {
-		async asyncData ({ $content }) {
+		async asyncData (r) {
+			const { $content } = r
+			console.log($content)
+			console.log(r)
 			const coursesPages = await $content("courses", { deep: true }).where({ extension: '.json' }).fetch()
 			let slugs = []
 			const courses = coursesPages
