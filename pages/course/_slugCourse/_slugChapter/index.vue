@@ -32,10 +32,11 @@
 			} catch (e) {
 				redirect("/")
 			}
-			store.commit("course/setChapters",chapters)
 
 			const chapter = chapters.find((x)=>{ return x.slug===params.slugChapter })
 			store.commit("course/setCurrentChapter", chapter)
+
+			store.commit("course/setChapters",chapters.filter(x=> { return !x.hidden || x.slug ===params.slugChapter } ))
 
 			return {
 				courseConfig,

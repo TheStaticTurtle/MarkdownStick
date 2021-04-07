@@ -1,16 +1,50 @@
 ---
-title: Introduction
-subtitle: Basics of placeholders
-icon: mdi-book
-order: 10
+title: Links
+subtitle: Share ressources
+icon: mdi-link
+order: 70
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor tellus eget mauris egestas rutrum. Curabitur velit turpis, pulvinar id sapien non, posuere sollicitudin lorem. Sed ullamcorper et quam id aliquet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis varius bibendum pellentesque. Cras condimentum dictum urna id pellentesque. Ut faucibus dictum rutrum. Morbi ac massa non libero tempus tincidunt. Ut velit ex, dignissim a convallis a, molestie id ex.
+## Links
 
-Fusce feugiat viverra massa in lacinia. In consectetur nunc vitae suscipit luctus. Mauris ut nulla tortor. Nullam orci urna, vulputate eget gravida a, pellentesque vel est. Pellentesque quis neque varius nulla gravida consectetur. Vivamus eget nunc facilisis, suscipit arcu ac, ultricies enim. Duis placerat dignissim sodales. Phasellus quis posuere urna. Suspendisse potenti. Sed non suscipit sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consequat mollis enim at dapibus. Sed ullamcorper tristique magna sit amet gravida. Ut sed turpis at nibh blandit pharetra. Cras vulputate sed justo non tincidunt.
+```
+[You can link to other pages](/course/example-course/Invisible)
 
-Nam vitae felis vel felis pellentesque gravida. Sed ac cursus orci, iaculis euismod odio. Sed facilisis bibendum tempor. Mauris feugiat, eros eget sodales pellentesque, eros massa accumsan justo, sed congue nunc justo quis urna. Morbi ut sapien ipsum. Ut ut iaculis mi. Aenean sapien ipsum, porta vitae nisl luctus, pretium sollicitudin dolor. Sed placerat augue mi, vel tempus nibh consectetur nec. Aliquam tempor justo eu orci aliquet elementum et ut orci. Donec congue, sapien non tincidunt posuere, sapien elit accumsan nisi, at ultrices justo nunc vel ligula. Cras enim ante, fringilla in pulvinar vitae, condimentum a ipsum. Ut non viverra purus. Donec auctor bibendum accumsan.
+[I'm an inline-style link](https://www.google.com)
 
-Maecenas pretium libero non eros aliquet vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut ornare finibus nisi, tempor aliquam enim venenatis et. Nulla placerat ornare massa sit amet dignissim. Integer euismod nisi ut purus aliquam, in egestas lorem laoreet. Nam eleifend ultricies congue. Sed enim enim, tincidunt imperdiet dapibus id, blandit in quam. Nullam molestie, dui eu posuere consequat, lacus felis egestas velit, efficitur lobortis est velit at sapien. Sed vehicula massa nec leo sagittis, eget rhoncus nisl interdum. Ut feugiat arcu tortor, eu viverra dui ultrices sit amet. Nunc nec euismod felis. Aliquam eros libero, suscipit vitae iaculis ut, venenatis sit amet justo. Praesent ultrices dictum eros, non ullamcorper diam iaculis ut. Sed efficitur ante in eros scelerisque, sit amet rutrum sem fringilla.
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
 
-Quisque pharetra consectetur gravida. Morbi elementum accumsan urna, id lacinia lectus. Nam magna dui, porta ac accumsan a, sollicitudin eu erat. Sed non imperdiet felis. Maecenas mauris tellus, rutrum tincidunt nibh sed, tincidunt laoreet ex. Curabitur facilisis ligula enim, vel sagittis dui lobortis ac. Mauris ultricies, eros sed viverra malesuada, felis magna lobortis ipsum, non molestie ex augue malesuada nulla. Duis lobortis, metus sed dignissim ullamcorper, enim massa bibendum purus, eget sodales sem ante sit amet dui. Nunc dignissim auctor porta. Donec pulvinar sodales imperdiet. Nunc purus nisi, interdum vitae rutrum at, blandit et lacus. Mauris et ex eleifend, dictum nibh eu, dignissim libero. Phasellus volutpat nisi ut sapien maximus laoreet.
+[You can use numbers for reference-style link definitions][1]
+
+Or leave it empty and use the [link text itself].
+
+URLs and URLs in angle brackets will automatically get turned into links. 
+http://www.example.com or <http://www.example.com> and sometimes 
+example.com.
+
+Some text to show that the reference links can follow later.
+
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[1]: http://slashdot.org
+[link text itself]: http://www.reddit.com
+```
+[You can link to other pages (Even invisible chapters/courses)](/course/example-course/Invisible)
+
+[I'm an inline-style link](https://www.google.com)
+
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
+
+[You can use numbers for reference-style link definitions][1]
+
+
+Or leave it empty and use the [link text itself].
+
+URLs and URLs in angle brackets will automatically get turned into links. 
+http://www.example.com or <http://www.example.com> and sometimes 
+example.com.
+
+Some text to show that the reference links can follow later.
+
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[1]: http://slashdot.org
+[link text itself]: http://www.reddit.com

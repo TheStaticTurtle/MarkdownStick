@@ -14,7 +14,8 @@
 <script>
 	export default {
 		async asyncData ({ $content }) {
-			const coursesPages = await $content("courses", { deep: true }).where({ extension: '.json' }).fetch()
+			let coursesPages = await $content("courses", { deep: true }).where({ extension: '.json'}).fetch()
+			coursesPages = coursesPages.filter(x=> x.visible!==false)
 			let slugs = []
 			const courses = coursesPages
 				.filter(x=>x.dir!=="/courses")

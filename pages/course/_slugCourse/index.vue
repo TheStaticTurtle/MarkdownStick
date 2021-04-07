@@ -23,6 +23,7 @@
 			let chapters = []
 			try {
 				chapters = await $content("courses", { deep: true }, params.slugCourse).where({ extension: '.md' }).fetch()
+				chapters = chapters.filter(x=> { return !x.hidden || x.slug ===params.slugChapter } )
 				chapters = chapters.sort(function(a, b) {
 					if (a.order < b.order) return -1;
 					if (a.order > b.order) return 1;
