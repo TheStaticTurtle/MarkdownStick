@@ -24,15 +24,47 @@
 			</div>
 
 			<v-list style="overflow-y: auto; max-height: calc(100% - 116px)">
-				<v-list-item v-for="(chapter, i) in course.chapters" :key="i" :to="urlForChapter(chapter)" router exact >
-					<v-list-item-action>
-						<v-icon>{{ chapter.icon }}</v-icon>
-					</v-list-item-action>
-					<v-list-item-content>
-						<v-list-item-title>{{ chapter.title }}</v-list-item-title>
-						<v-list-item-subtitle>{{ chapter.subtitle }}</v-list-item-subtitle>
-					</v-list-item-content>
-				</v-list-item>
+				<div v-for="(chapter, i) in chapters" :key="i">
+					<!-- Display the normal link if we aren't visitng it and that the toc isn't empty-->
+					<v-list-item v-if="!chapter.selected || chapter.toc.length===0" :to="urlForChapter(chapter)" router exact >
+						<v-list-item-action>
+							<v-icon>{{ chapter.icon }}</v-icon>
+						</v-list-item-action>
+						<v-list-item-content>
+							<v-list-item-title>{{ chapter.title }}</v-list-item-title>
+							<v-list-item-subtitle>{{ chapter.subtitle }}</v-list-item-subtitle>
+						</v-list-item-content>
+					</v-list-item>
+
+					<!-- Otherwise display the TOC for the current link-->
+					<v-list-group v-else>
+						<template v-slot:activator>
+							<v-list-item-action>
+								<v-icon>{{ chapter.icon }}</v-icon>
+							</v-list-item-action>
+							<v-list-item-content>
+								<v-list-item-title>{{ chapter.title }}</v-list-item-title>
+								<v-list-item-subtitle>{{ chapter.subtitle }}</v-list-item-subtitle>
+							</v-list-item-content>
+						</template>
+						<v-list-item nuxt link v-for="(tocEntry) in chapter.toc" :key="tocEntry.id" style="min-height: 40px;" :to="urlForChapterPlusTitleId(chapter,tocEntry.id)">
+							<v-list-item-title class="pl-2">
+								<v-icon>mdi-chevron-right</v-icon>
+								{{ tocEntry.text }}
+							</v-list-item-title>
+						</v-list-item>
+					</v-list-group>
+				</div>
+
+<!--				<v-list-item v-for="(chapter, i) in course.chapters" :key="i" :to="urlForChapter(chapter)" router exact >-->
+<!--					<v-list-item-action>-->
+<!--						<v-icon>{{ chapter.icon }}</v-icon>-->
+<!--					</v-list-item-action>-->
+<!--					<v-list-item-content>-->
+<!--						<v-list-item-title>{{ chapter.title }}</v-list-item-title>-->
+<!--						<v-list-item-subtitle>{{ chapter.subtitle }}</v-list-item-subtitle>-->
+<!--					</v-list-item-content>-->
+<!--				</v-list-item>-->
 			</v-list>
 		</v-navigation-drawer>
 
@@ -106,7 +138,6 @@
 	::-webkit-scrollbar-corner {
 		background: transparent;
 	}
-	</style>
 </style>
 
 <script>
@@ -119,7 +150,16 @@
 			theme(){
 				return (this.$vuetify.theme.dark) ? 'dark' : 'light'
 			},
-			...mapState(['course', 'settings'])
+			...mapState({
+				settings: state => state.settings,
+				course: state => state.course,
+				chapters (state) {
+					return state.course.chapters.map(x=>{
+						x.selected = x.slug === state.course.chapter.slug
+						return x
+					})
+				}
+			})
 		},
 
 		watch: {
@@ -142,6 +182,9 @@
 		methods: {
 			urlForChapter(chapter) {
 				return "/course/"+ this.course.config.dir.replace("/courses/","") +'/'+chapter.slug
+			},
+			urlForChapterPlusTitleId(chapter, id) {
+				return "/course/"+ this.course.config.dir.replace("/courses/","") +'/'+chapter.slug + '#'+id
 			}
 		}
 	}

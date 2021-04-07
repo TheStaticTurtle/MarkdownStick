@@ -2,5 +2,5 @@
 	"title": "Example course",
 	"image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Books_HD_%288314929977%29.jpg",
 	"description": "This is an example course to get started on organising yours",
-	"visible": false
+	"visible": true
 }
