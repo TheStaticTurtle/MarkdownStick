@@ -26,7 +26,7 @@
 			<v-list style="overflow-y: auto; max-height: calc(100% - 116px)">
 				<div v-for="(chapter, i) in chapters" :key="i">
 					<!-- Display the normal link if we aren't visitng it and that the toc isn't empty-->
-					<v-list-item v-if="!chapter.selected || chapter.toc.length===0" :to="urlForChapter(chapter)" router exact >
+					<v-list-item v-if="chapter.toc.length===0" :to="urlForChapter(chapter)" router exact >
 						<v-list-item-action>
 							<v-icon>{{ chapter.icon }}</v-icon>
 						</v-list-item-action>
