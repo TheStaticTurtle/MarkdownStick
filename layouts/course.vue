@@ -1,27 +1,29 @@
 <template>
 	<v-app dark :style="{background: $vuetify.theme.themes[theme].background}">
 		<v-navigation-drawer v-model="drawer" app>
-			<v-list-item>
-				<v-list-item-content>
-					<v-list-item-title class="title">
-						{{ course.config.title }}
-					</v-list-item-title>
-					<v-list-item-subtitle>
-						{{ course.config.description }}
-					</v-list-item-subtitle>
-				</v-list-item-content>
-			</v-list-item>
+			<div>
+				<v-list-item>
+					<v-list-item-content>
+						<v-list-item-title class="title">
+							{{ course.config.title }}
+						</v-list-item-title>
+						<v-list-item-subtitle>
+							{{ course.config.description }}
+						</v-list-item-subtitle>
+					</v-list-item-content>
+				</v-list-item>
 
-			<v-divider></v-divider>
+				<v-divider></v-divider>
 
-			<v-list-item to="/" router>
-				<v-list-item-action><v-icon>mdi-bookshelf</v-icon></v-list-item-action>
-				<v-list-item-content><v-list-item-title>Go back to the library</v-list-item-title></v-list-item-content>
-			</v-list-item>
+				<v-list-item to="/" router>
+					<v-list-item-action><v-icon>mdi-bookshelf</v-icon></v-list-item-action>
+					<v-list-item-content><v-list-item-title>Go back to the library</v-list-item-title></v-list-item-content>
+				</v-list-item>
 
-			<v-divider></v-divider>
+				<v-divider></v-divider>
+			</div>
 
-			<v-list>
+			<v-list style="overflow-y: auto; max-height: calc(100% - 116px)">
 				<v-list-item v-for="(chapter, i) in course.chapters" :key="i" :to="urlForChapter(chapter)" router exact >
 					<v-list-item-action>
 						<v-icon>{{ chapter.icon }}</v-icon>
@@ -69,6 +71,43 @@
 		</v-main>
 	</v-app>
 </template>
+
+<style scoped>
+	::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+	}
+	::-webkit-scrollbar-button {
+		width: 0px;
+		height: 0px;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #e1e1e1;
+		border: 0px none #ffffff;
+		border-radius: 50px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #ffffff;
+	}
+	::-webkit-scrollbar-thumb:active {
+		background: #000000;
+	}
+	::-webkit-scrollbar-track {
+		background: #666666;
+		border: 0px none #ffffff;
+		border-radius: 50px;
+	}
+	::-webkit-scrollbar-track:hover {
+		background: #666666;
+	}
+	::-webkit-scrollbar-track:active {
+		background: #333333;
+	}
+	::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+	</style>
+</style>
 
 <script>
 	import { mapState } from 'vuex'
