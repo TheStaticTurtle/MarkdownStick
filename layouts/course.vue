@@ -56,15 +56,6 @@
 					</v-list-group>
 				</div>
 
-<!--				<v-list-item v-for="(chapter, i) in course.chapters" :key="i" :to="urlForChapter(chapter)" router exact >-->
-<!--					<v-list-item-action>-->
-<!--						<v-icon>{{ chapter.icon }}</v-icon>-->
-<!--					</v-list-item-action>-->
-<!--					<v-list-item-content>-->
-<!--						<v-list-item-title>{{ chapter.title }}</v-list-item-title>-->
-<!--						<v-list-item-subtitle>{{ chapter.subtitle }}</v-list-item-subtitle>-->
-<!--					</v-list-item-content>-->
-<!--				</v-list-item>-->
 			</v-list>
 		</v-navigation-drawer>
 
