@@ -11,7 +11,8 @@
 		name: "Course",
 		layout: "course",
 
-		async asyncData ({ $content, params, store, redirect}) {
+		async asyncData ({ $content, params, store, redirect, $vuetify}) {
+			store.commit("settings/setDarkMode", $vuetify.theme.dark)
 			let courseConfig = null
 			try {
 				courseConfig = await $content("courses", { deep: true }, params.slugCourse).where({ extension: '.json' }).fetch()

@@ -13,7 +13,8 @@
 
 <script>
 	export default {
-		async asyncData ({ $content }) {
+		async asyncData ({ $content, store, $vuetify }) {
+			store.commit("settings/setDarkMode", $vuetify.theme.dark)
 			let coursesPages = await $content("courses", { deep: true }).where({ extension: '.json'}).fetch()
 			coursesPages = coursesPages.filter(x=> x.visible!==false)
 			let slugs = []
