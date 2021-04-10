@@ -69,6 +69,7 @@ export default {
 			},
 			remarkPlugins: [
 				'remark-math',
+				'remark-emoji',
 			],
 			rehypePlugins: [
 				'rehype-katex',
