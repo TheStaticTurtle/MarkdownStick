@@ -20,6 +20,7 @@
 		"nuxt": "^2.15.3",
 		"prism-themes": "^1.6.0",
 		"rehype-katex": "^4.0.0",
+		"remark-emoji": "^2.2.0",
 		"remark-math": "^4.0.0"
 	},
 	"devDependencies": {
