@@ -1,3 +1,4 @@
+
 # MarkdownStick
 
 This project is a simple markdown reader for hosting static files, likes courses.
@@ -37,6 +38,11 @@ And of course it supports a dark / light mode
 
 ## Pictures
 
+<img src="https://user-images.githubusercontent.com/17061996/116003593-ec51eb80-a5fe-11eb-8965-bdea5388bf07.png" width="500" />
+<img src="https://user-images.githubusercontent.com/17061996/116003602-f7a51700-a5fe-11eb-8053-f02c6bc3f08f.png" width="500" />
+<img src="https://user-images.githubusercontent.com/17061996/116003606-f96eda80-a5fe-11eb-9cc2-264be35d7bab.png" width="500" />
+<img src="https://user-images.githubusercontent.com/17061996/116003610-fb389e00-a5fe-11eb-9770-4a4e86760a67.png" width="500" />
+<img src="https://user-images.githubusercontent.com/17061996/116003614-fd026180-a5fe-11eb-978e-02833174ab58.png" width="500" />
 
 ## Build
 This project is build around nuxt and nuxt-content. Here is a few commands to get it started:
