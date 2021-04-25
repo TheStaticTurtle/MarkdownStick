@@ -28,6 +28,8 @@ order: 40
 ---
 ```
 
+All courses must be located in /content/courses/
+
 ## Features
 As mentioned the reader supports multiple intergrations like, code highlighting, html,iframes, images, links (with support for chapter to chapter links), math expressions with latex, smileys, tables, uml, and some basic UI with MCQs.
 All of which can be ssen in the example course
