@@ -17,7 +17,7 @@
 		"core-js": "^3.12.1",
 		"jszip": "^3.6.0",
 		"mermaid": "^8.9.2",
-		"nuxt": "^2.15.5",
+		"nuxt": "^2.15.6",
 		"prism-themes": "^1.7.0",
 		"rehype-katex": "^4.0.0",
 		"remark-emoji": "^2.2.0",
