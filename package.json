@@ -16,7 +16,7 @@
 		"@nuxtjs/pwa": "^3.3.5",
 		"core-js": "^3.14.0",
 		"jszip": "^3.6.0",
-		"mermaid": "^8.9.2",
+		"mermaid": "^8.11.0",
 		"nuxt": "^2.15.7",
 		"prism-themes": "^1.7.0",
 		"rehype-katex": "^5.0.0",
